@@ -28,7 +28,8 @@
         "./assets/bootstrap/dist/js/bootstrap.js",
         "./assets/bootstrap-material-design/dist/js/ripples.min.js",
         "./assets/bootstrap-material-design/dist/js/material.min.js",
-        "./assets/bootstrap-notify/bootstrap-notify.js"
+        "./assets/bootstrap-notify/bootstrap-notify.js",
+          "../src/assets/js/jquery.sharrre.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,6 +1,13 @@
 import { Component, OnInit,Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-declare var $: any;
+const Teacher = [
+    {id: 1, name:'Nguyễn Văn A',age:21,job:'Giảng Viên',image:'https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg'},
+    {id: 2, name:'Nguyễn Văn B',age:21,job:'Giảng Viên',image:'https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg'},
+    {id: 3, name:'Nguyễn Văn C',age:21,job:'Giảng Viên',image:'https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg'},
+    {id: 4, name:'Nguyễn Văn Nam',age:21,job:'Giảng Viên',image:'https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg'},
+    {id: 5, name:'Trần Viết A',age:21,job:'Giảng Viên',image:'https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg'},
+    {id: 6, name:'Lê Xung Công',age:21,job:'Giảng Viên',image:'https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg'},
+    {id: 7, name:'Trần Ngà',age:21,job:'Giảng Viên',image:'https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg'},
+  ];
 
 @Component({
   selector: 'app-table-list',
@@ -8,26 +15,9 @@ declare var $: any;
   styleUrls: ['./table-list.component.scss']
 })
 export class TableListComponent implements OnInit {
-
+    teacher=Teacher;
   constructor() { }
-  showNotification(from, align){
-      const type = ['','info','success','warning','danger'];
-
-      const color = Math.floor((Math.random() * 4) + 1);
-
-      $.notify({
-          icon: "notifications",
-          message: "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
-
-      },{
-          type: type[color],
-          timer: 4000,
-          placement: {
-              from: from,
-              align: align
-          }
-      });
-  }
+ 
   ngOnInit() {
   }
 

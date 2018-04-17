@@ -15,67 +15,45 @@
      <div class="main-content">
       <div class="container-fluid">
           <div class="card">
-              <div class="card-header" data-background-color="red">
-                  <h4 class="title">Danh Sách Giáo Viên</h4>
+              <div class="card-header" data-background-color="red" >
+                  <h4 class="title" >Danh Sách Sinh Viên</h4>
+                <div class="input-field col s10" >
+                     
+                <div class="form-group form-black is-empty" style="text-align: center;">
+                    <input type="text" class="form-control" placeholder="Search" name="firstname" [(ngModel)]="filter.firstname">
+                    <span class="material-input"></span>
+                </div>
+             
+                </div>
               </div>
+              
+               
               <div class="content-card">
                  <!-- panel -->
-                  <div class="panel">
-                      <div class="panel-body">
-                        <h2 style="font-weight: bold;">Nguyễn Viết Anh Nam</h2>
-                        <h2 >Giáo viên ưu tú nhất...</h2>
-                      </div>
-                      <div class="panel-body-right">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" >
-                     </div>
-                  </div>  
-                  <!-- panel -->
-                  <!-- panel -->
-                  <div class="panel">
-                    <div class="panel-body">
-                      <h2 style="font-weight: bold;">Nguyễn Viết Anh Nam</h2>
-                      <h2 >Giáo viên ưu tú nhất...</h2>
-                    </div>
-                    <div class="panel-body-right">
-                      <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" >
-                   </div>
-                </div>  
-                <!-- panel -->
-                <!-- panel -->
-                <div class="panel">
-                  <div class="panel-body">
-                    <h2 style="font-weight: bold;">Nguyễn Viết Anh Nam</h2>
-                    <h2 >Giáo viên ưu tú nhất...</h2>
+                  
+                <div class="panel" *ngFor="let tr of trainer | bookfilter:filter | slice:(page-1)*limit:page*limit">
+                  <div class="panel-body" (click)="updateUser(tr)">
+                    <p class="title-name">{{tr.lastname || "Not specified"}}  {{tr.firstname || "Not specified"}}</p>
+                    <p class="decriptions-name">{{tr.description || "Not specified"}}   </p> 
                   </div>
                   <div class="panel-body-right">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" >
+                    <img src="{{tr.image}}" alt="Hình Ảnh">
                  </div>
               </div>  
               <!-- panel -->
-              <!-- panel -->
-              <div class="panel">
-                <div class="panel-body">
-                  <h2 style="font-weight: bold;">Nguyễn Viết Anh Nam</h2>
-                  <h2 >Giáo viên ưu tú nhất...</h2>
-                </div>
-                <div class="panel-body-right">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" >
-               </div>
-            </div>  
-            <!-- panel -->
-            <!-- panel -->
-            <div class="panel">
-              <div class="panel-body">
-                <h2 style="font-weight: bold;">Nguyễn Viết Anh Nam</h2>
-                <h2 >Giáo viên ưu tú nhất...</h2>
-              </div>
-              <div class="panel-body-right">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" >
-             </div>
-          </div>  
-          <!-- panel -->
+             
+              
               
               </div>
+              <div class="btn-group pull-right" style="align-items: 0 auto">
+                    <ul class="pagination" >
+                       <li [ngClass]="{'disabled': (page == 1)}" ><a  (click)="prevPage()" href="javascript:void(0)">Prev</a></li>
+                          <li *ngFor="let page of pagesIndex"  [ngClass]="{'active': (currentIndex == page)}">
+                             <a (click)="setPage()" href="javascript:void(0)" >{{page}}</a>
+                          </li>
+                       <li  ><a   (click)="nextPage()" href="javascript:void(0)" >Next</a></li>
+                    </ul>
+                 </div>
           </div>
       </div>
   </div>

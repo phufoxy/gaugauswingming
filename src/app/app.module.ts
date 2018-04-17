@@ -20,12 +20,20 @@ import {MatInputModule} from '@angular/material/input';
 import { TableListComponent } from './table-list/table-list.component';
 import { TableClassComponent } from './table-class/table-class.component';
 import { TableStudentComponent } from './table-student/table-student.component';
-import { FormComponent } from './form/form.component';
 import {TokenService} from './share-service/token.service';
 import {UserService} from './share-service/user.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentComponent } from './model/student/student.component';
+import { TestComponent } from './test/test.component';
+import {MatCardModule} from '@angular/material/card';
+import {BookFilterPipe} from './share-service/filter/trainer-filter.pipe';
 
+
+import {TrainerService} from './share-service/trainer/trainer.service';
+import { SettingComponent } from './setting/setting.component';
+import {EventService} from './share-service/event.service';
 @NgModule({
   declarations: [
     
@@ -38,10 +46,16 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     TableListComponent,
     TableClassComponent,
     TableStudentComponent,
-    FormComponent
+    StudentComponent,
+    TestComponent,
+    BookFilterPipe,
+    SettingComponent
+    
   ],
   
   imports: [
+    MatCardModule,
+    HttpClientModule,
     HttpModule,
     MatInputModule,
     FormsModule,
@@ -54,7 +68,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     BrowserModule
   ],
  
-  providers: [TokenService,UserService],
+  providers: [TokenService,UserService,TrainerService,EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

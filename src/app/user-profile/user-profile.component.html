@@ -19,74 +19,245 @@
                         <h4 class="title">Biểu mẫu</h4>
                         <p class="category">Hoàn thành để được vào dữ liệu</p>
                     </div>
-                    <div class="card-content">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Nghề nghiệp" >
+                    <!-- <div class="card-content">
+                        <form (ngSubmit)="processForm()">
+                                <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <div class="row">
+                                                        <div class="input-field col s10">
+                                                                <input  placeholder="Placeholder" id="id" type="text" class="validate" name="id" [(ngModel)]="trainer.id">
+                                                                <label for="id" >First Name</label>
+                                                              </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <div class="row">
+                                                    <div class="input-field col s10">
+                                                        <input  type="text" class="validate" name="lastname" [(ngModel)]="trainer.lastname" required >
+                                                        <label for="email">Họ Lót</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input  type="text" class="validate" name="firstname" [(ngModel)]="trainer.firstname">
+                                                        <label for="email">Tên</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Username">
+            
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="input-field col s11">
+                                                              <input  type="date" class="validate" name="birthday" [(ngModel)]="trainer.birthday">
+                                                              <label for="date">Ngày Sinh</label>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="input-field col s12">
+                                                              <input  type="Number" class="validate" name="phone" [(ngModel)]="trainer.phone">
+                                                              <label for="Number">Số Điện Thoại</label>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+            
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input  type="text" class="validate" name="address" [(ngModel)]="trainer.address">
+                                                    <label for="text">Địa Chỉ</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="email" class="form-control" placeholder="Email address">
+            
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <div class="row">
+                                                    <div class="input-field col s10">
+                                                            <input  type="text" class="validate" name="image" [(ngModel)]="trainer.image">
+                                                            <label for="email">Link Hình Ảnh</label>
+                                                    </div>
+                                                </div>                                            
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <div class="row">
+                                                    <div class="input-field col s10">
+                                                        <input  type="text" class="validate" name="status" [(ngModel)]="trainer.status">
+                                                        <label for="email">Trạng Thái</label>
+                                                    </div>
+                                                </div>                                             
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                            <input  type="text" class="validate" name="description" [(ngModel)]="trainer.description">
+                                                            <label for="email">Miêu Tả</label>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-    
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Họ Và Tên">
+            
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                            <input  type="date" class="validate" name="joined" [(ngModel)]="trainer.joined">
+                                                            <label for="date">Ngày Bắt Đầu</label>
+                                                    </div>
+                                                </div>                                             
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Tuổi">
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Địa Chỉ">
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Thành Phố Đang Ở..">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Nơi Sinh">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <input type="text" class="form-control" placeholder="Mã">
-                                    </div>
-                                </div>
-                            </div>
-    
-                            
-    
-                            <button type="submit" class="btn btn-danger pull-right">Cập Nhật Dữ Liệu</button>
-                            <div class="clearfix"></div>
+            
+                                <button class="btn btn-danger pull-right" type="submit" value="Save">Lưu</button>
+                                <div class="clearfix"></div>
                         </form>
-                    </div>
+                    </div> -->
+                            <!-- card -->
+                <div class="container-content">
+                        <form (ngSubmit)="processForm()">
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="fname">Họ Lót</label>
+                            </div>
+                            <div class="col-75">
+                              <input type="text"  name="lastname" [(ngModel)]="trainer.lastname" placeholder="Your name..">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="lname">Tên</label>
+                            </div>
+                            <div class="col-75">
+                                <input placeholder="Tên" type="text" name="firstname" [(ngModel)]="trainer.firstname">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="country">Trạng Thái</label>
+                            </div>
+                            <div class="col-75">
+                              <select name="status" [(ngModel)]="trainer.status">
+                                <option >Đang Hoạt Động</option>
+                                <option >Hết Hoạt Động</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="row">
+                                <div class="col-25">
+                                  <label for="country">Thành Viên</label>
+                                </div>
+                                <div class="col-75">
+                                  <select name="description" [(ngModel)]="trainer.description">
+                                    <option >Giáo Viên</option>
+                                    <option >Sinh Viên</option>
+                                  </select>
+                                </div>
+                             </div>
+                        <div class="row">
+                                    <div class="col-25">
+                                      <label for="subject">Số Điện Thoại</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input placeholder="Phone" type="text" name="phone" [(ngModel)]="trainer.phone">
+                                    </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                              <label for="subject">Ngày Sinh</label>
+                            </div>
+                            <div class="col-75">
+                                <input placeholder="Ngày Sinh" type="text" name="birthday" [(ngModel)]="trainer.birthday">
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-25">
+                                  <label for="subject">Địa Chỉ</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Địa Chỉ" type="text" name="address" [(ngModel)]="trainer.address">
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-25">
+                                  <label for="subject">Hình Ảnh</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Hình Ảnh" type="text" name="image" [(ngModel)]="trainer.image">
+                                </div>
+                        </div>
+                          <div class="row">
+                            <input type="submit" value="Submit">
+                          </div>
+                        </form>
+                      </div>
+                      <!-- card -->
+                     
+                        <!-- form -->
+                        <!-- <form id="contact1" (ngSubmit)="processForm()">
+                          <h3>Thông Tin Sinh Viên</h3>
+                          <fieldset>
+                            <input placeholder="Họ Lót" type="text" name="lastname" [(ngModel)]="trainer.lastname">
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Tên" type="email" name="firstname" [(ngModel)]="trainer.firstname">
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Ngày Sinh" type="date" name="birthday" [(ngModel)]="trainer.birthday">
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Số Điện Thoại" type="text" name="phone" [(ngModel)]="trainer.phone">
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Địa Chỉ" type="text" name="address" [(ngModel)]="trainer.address">
+                          </fieldset>
+                          <fieldset>
+                            <input placeholder="Hình Ảnh" type="text" name="image" [(ngModel)]="trainer.image">
+                          </fieldset>  
+                          <fieldset>                       
+                            <select  id="select"  class="select" name="description" [(ngModel)]="trainer.description">
+                                    <option value="">Please select value</option>
+                                    
+                                <option *ngFor="let tr of desciption">{{tr.path}}</option>
+                            </select>
+                            </fieldset>
+                          <fieldset>
+                            <select  id="select" name="status" [(ngModel)]="trainer.status">
+                                    <option value="0">Chọn Trạng Thái</option>
+                                    <option>Đang Hoạt Động</option>
+                                    <option>Từng Hoạt Động</option>
+                                    <option>Không Còn</option>
+                            </select>
+                          </fieldset>
+                          <fieldset>
+                            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                          </fieldset>
+                        </form> -->
+                      <!-- form -->
                 </div>
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card card-profile">
                     <div class="card-avatar">
                         <a href="#pablo">
@@ -103,7 +274,7 @@
                         <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     </div>

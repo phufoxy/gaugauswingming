@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +9,13 @@ import { ROUTES } from '../sidebar/sidebar.component';
 })
 export class NavbarComponent implements OnInit {
     private listTitles: any[];
- 
+    location: Location;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor( private element: ElementRef) {
-     
-          this.sidebarVisible = false;
+    constructor(location: Location, private element: ElementRef) {
+        this.location = location;
+        this.sidebarVisible = false;
     }
 
     ngOnInit(){
@@ -48,6 +49,20 @@ export class NavbarComponent implements OnInit {
             this.sidebarClose();
         }
     };
+    getTitle(){
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        if(titlee.charAt(0) === '#'){
+            titlee = titlee.slice( 2 );
+        }
+        titlee = titlee.split('/').pop();
+  
+        for(var item = 0; item < this.listTitles.length; item++){
+            if(this.listTitles[item].path === titlee){
+                return this.listTitles[item].title;
+            }
+        }
+        return 'Dashboard';
+      }
 
    
 }
