@@ -1,0 +1,315 @@
+<div class="wrapper">
+
+    <div class="sidebar" data-color='red' data-image="">
+        <!-- sidebar -->
+        <app-sidebar></app-sidebar>
+         <!-- sidebar -->
+        <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+    </div>
+    <div class="main-panel">
+        <!-- navbar -->
+        <app-navbar></app-navbar>
+       <!-- navbar -->
+      
+            <!-- main -->
+       <div class="main-content">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+                <!-- card -->
+                  <div class="card">
+                      <div class="card-header" data-background-color="red">
+                          <h4 class="title">Cài đặt trang chủ</h4>
+                          
+                      </div>
+                      <div class="card-content">
+                           <!-- card -->
+                  
+                      <form action="/action_page.php">
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="fname">First Name</label>
+                          </div>
+                          <div class="col-75">
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="lname">Last Name</label>
+                          </div>
+                          <div class="col-75">
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="country">Country</label>
+                          </div>
+                          <div class="col-75">
+                            <select id="country" name="country">
+                              <option value="australia">Australia</option>
+                              <option value="canada">Canada</option>
+                              <option value="usa">USA</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="subject">Subject</label>
+                          </div>
+                          <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="Submit">
+                          </div>
+                      </form>
+                     
+                  
+                    <!-- card -->
+                   
+              </div>
+          </div>
+          <!-- card -->
+           <!-- card -->
+           <div class="card">
+              <div class="card-header" data-background-color="red">
+                  <h4 class="title">Slider</h4>
+                  
+              </div>
+              <div class="card-content">
+                   <!-- card -->
+             
+              <!-- The four columns -->
+              <div class="row">
+              <!-- column -->
+                  <div class="column">
+                      <span class="closebtn-column">&times;</span>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbpj2iRoAPe0-WwYkUgUddhBiZfEzYkFa5_T1ONgkgSMtbV7lL" alt="Nature" style="width:100%;height: 140px;" onclick="myFunction(this);">
+                  </div>
+              <!-- column -->
+            
+                <div class="column">
+                    <img src="http://ajaxuploader.com/images/drag-drop-file-upload.png" alt="Nature1" style="width:100%;height: 140px;">
+                    <input id="file-input" type="file" style="display: block"/>
+                </div>
+              </div>
+              <div class="container-image">
+                  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                  <img id="expandedImg" style="width:100%;height: 300px;">
+                  <div id="imgtext"></div>
+              </div>
+        
+          
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+            </div>
+           
+          </div>
+           <!-- card -->  
+            <!-- card -->
+            <div class="card">
+                <div class="card-header" data-background-color="red">
+                    <h4 class="title">Footer</h4>
+                    
+                </div>
+                <div class="card-content">
+              
+                 <!-- card -->
+                 <div class="col-lg-5 col-md-12">
+                    <div class="card" >
+                      <div class="card-header" data-background-color="orange">
+                        <h4 class="title">Danh sách Footer</h4>
+                        <p class="category"></p>
+                      </div>
+                    <div class="card-content table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-warning">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Group Footer</th>
+                                    <th>item Footer</th>
+                                    <th>Lựa Chọn</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>HOME</td>
+                                    <td>ADV</td>
+                                  
+                                    <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                    </td>
+                                </tr>
+                                
+                              
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+             <!-- card -->
+             <div class="col-lg-7 col-md-12">
+                <div class="card" >
+                  <div class="card-header" data-background-color="orange">
+                    <h4 class="title">Thông Tin Footer</h4>
+                    <p class="category"></p>
+                  </div>
+                <div class="card-content table-responsive">
+                   
+                        <form action="/action_page.php">
+                          <div class="row">
+                              <div class="col-25">
+                                <label for="country">Group Footer</label>
+                              </div>
+                              <div class="col-75">
+                                <select id="country" name="country">
+                                  <option >Home</option>
+                                  <option >Programer</option>
+                                  <option >Groups</option>
+                                  <option >Trainers</option>
+                                  <option >Contact</option>
+                                </select>
+                              </div>
+                            </div>
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="lname">Item Footer</label>
+                            </div>
+                            <div class="col-75">
+                              <input type="text"   placeholder="Item Footer..">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <input type="submit" value="Submit">
+                          </div>
+                        </form>
+                      
+                      <!-- card -->
+                   
+          
+            </div>
+             
+              </div>
+             
+            </div>
+             <!-- card -->  
+            
+           
+             
+             
+              </div>
+             
+            </div>
+            <!-- card -->
+            <div class="card">
+                <div class="card-header" data-background-color="red">
+                    <h4 class="title">Header</h4>
+                    
+                </div>
+                <div class="card-content">
+                     <!-- card -->
+  
+                     <!-- card -->
+                  <div class="col-lg-5 col-md-12">
+                      <div class="card" >
+                        <div class="card-header" data-background-color="orange">
+                          <h4 class="title">Danh sách header</h4>
+                          <p class="category"></p>
+                        </div>
+                      <div class="card-content table-responsive">
+                          <table class="table table-hover">
+                              <thead class="text-warning">
+                                  <tr>
+                                      <th>ID</th>
+                                      <th>Group Header</th>
+                                      <th>item Header</th>
+                                      <th>Lựa Chọn</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>HOME</td>
+                                      <td>ADV</td>
+                                    
+                                      <td class="td-actions text-right">
+                                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                                  <i class="material-icons">edit</i>
+                                              </button>
+                                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                  <i class="material-icons">close</i>
+                                              </button>
+                                      </td>
+                                  </tr>
+                                  
+                                
+                              </tbody>
+                          </table>
+                          
+                      </div>
+                  </div>
+              </div>
+               <!-- card -->
+               <div class="col-lg-7 col-md-12">
+                  <div class="card" >
+                    <div class="card-header" data-background-color="orange">
+                      <h4 class="title">Thông Tin Header</h4>
+                      <p class="category"></p>
+                    </div>
+                  <div class="card-content table-responsive">
+                      
+                          <form action="/action_page.php">
+                            <div class="row">
+                                <div class="col-25">
+                                  <label for="country">Group Header</label>
+                                </div>
+                                <div class="col-75">
+                                  <select id="country" name="country">
+                                    <option >Home</option>
+                                    <option >Programer</option>
+                                    <option >Groups</option>
+                                    <option >Trainers</option>
+                                    <option >Contact</option>
+                                  </select>
+                                </div>
+                              </div>
+                            <div class="row">
+                              <div class="col-25">
+                                <label for="lname">Item Header</label>
+                              </div>
+                              <div class="col-75">
+                                <input type="text"   placeholder="Item header..">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <input type="submit" value="Submit">
+                            </div>
+                          </form>
+                        
+                        <!-- card -->
+                     
+                  </div>
+              </div>
+          </div>
+           <!-- card -->
+        </div>
+      </div>
+      </div>
+    
+  <!-- footer -->
+  <app-footer></app-footer>
+  <!-- footer -->
+  </div>
+  </div>  
+  

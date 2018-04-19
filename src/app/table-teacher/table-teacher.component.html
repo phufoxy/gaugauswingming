@@ -1,0 +1,63 @@
+<div class="wrapper">
+
+    <div class="sidebar" data-color='red' data-image="">
+        <!-- sidebar -->
+        <app-sidebar></app-sidebar>
+         <!-- sidebar -->
+        <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+    </div>
+    <div class="main-panel">
+        <!-- navbar -->
+        <app-navbar></app-navbar>
+       <!-- navbar -->
+      
+            
+       <div class="main-content">
+          <div class="container-fluid">
+              <div class="card">
+                    <!-- card-header -->
+                    <div class="card-header" data-background-color="red" >
+                            <h4 class="title" >Danh Sách Giáo Viên</h4>
+                          <div class="input-field col s10" >
+                              
+                          <div class="form-group form-black is-empty" style="text-align: center;">
+                              <input type="text" class="form-control" placeholder="Search">
+                              <span class="material-input"></span>
+                          </div>
+                      
+                          </div>
+                    </div>
+                    
+                    <div class="content-card">
+                      <!-- panel -->   
+                      <div class="panel">
+                        <div class="panel-body">
+                          <p class="title-name">Trần Văn Nam</p>
+                          <p class="decriptions-name">Giáo Viên</p> 
+                        </div>
+                        <div class="panel-body-right">
+                          <img src="http://media.beam.usnews.com/e7/39/200d98cf4e538f62a25682c75b07/171219-teacher-stock.jpg" >
+                        </div>
+                      </div>  
+                      <!-- panel -->          
+                    </div>
+                    <!-- paging -->
+                    <div class="btn-group pull-right" style="align-items: 0 auto">
+                        <ul class="pagination" >
+                           <li [ngClass]="{'disabled': (page == 1)}" ><a  (click)="prevPage()" href="javascript:void(0)">Prev</a></li>
+                              <li *ngFor="let page of pagesIndex"  [ngClass]="{'active': (currentIndex == page)}">
+                                 <a (click)="setPage()" href="javascript:void(0)" >{{page}}</a>
+                              </li>
+                           <li  ><a   (click)="nextPage()" href="javascript:void(0)" >Next</a></li>
+                        </ul>
+                     </div>
+                    <!-- paging -->
+              </div>
+          </div>
+    </div>
+    
+  <!-- footer -->
+  <app-footer></app-footer>
+  <!-- footer -->
+  </div>
+  </div>  
