@@ -1,0 +1,140 @@
+<div class="wrapper">
+
+  <div class="sidebar" data-color='red' data-image="">
+      <!-- sidebar -->
+      <app-sidebar></app-sidebar>
+       <!-- sidebar -->
+      <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+  </div>
+  <div class="main-panel">
+      <!-- navbar -->
+      <app-navbar></app-navbar>
+     <!-- navbar -->
+<div class="main-content">
+<div class="container-fluid">
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+              <!-- card-header -->
+                <div class="card-header" data-background-color="red">
+                    <h4 class="title">Biểu mẫu</h4>
+                    <p class="category">Hoàn thành để được vào dữ liệu</p>
+                </div>
+                <!-- card-header -->
+                <div class="container-content">
+                        <form (ngSubmit)="processForm()">
+                          <!-- row -->
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="name">Tên Lớp</label>
+                            </div>
+                            <div class="col-75">
+                              <input type="text"  name="name" [(ngModel)]="course.name"  placeholder="Tên Lớp..">
+                            </div>
+                          </div>
+                          <!-- row -->
+                          <!-- row -->
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="lname">Giá Học Phí</label>
+                            </div>
+                            <div class="col-75">
+                                <input placeholder="Giá Học Phí" type="text" name="price" [(ngModel)]="course.price" >
+                            </div>
+                          </div>
+                          <!-- row -->
+                          <!-- row -->
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="country">Trạng Thái</label>
+                            </div>
+                            <div class="col-75">
+                              <select name="status" [(ngModel)]="course.status">
+                                <option >Đang Hoạt Động</option>
+                                <option >Hết Hoạt Động</option>
+                              </select>
+                            </div>
+                          </div>
+                          <!-- row -->
+                          <!-- row -->
+                          <div class="row">
+                                <div class="col-25">
+                                  <label for="country">Hình Ảnh</label>
+                                </div>
+                                <div class="col-75">
+                                  <input placeholder="Hình Ảnh" type="text" name="image" [(ngModel)]="course.image" >
+                                </div>
+                            </div>
+                            <!-- row -->
+                            <!-- row -->
+                          <div class="row">
+                                    <div class="col-25">
+                                      <label for="subject">Thực Trạng</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input placeholder="Thực Trạng" type="text"  name="description" [(ngModel)]="course.description" >
+                                    </div>
+                          </div>
+                          <!-- row -->
+                          <!-- row -->
+                        <div class="row">
+                            <div class="col-25">
+                              <label for="subject">Chi tiết</label>
+                            </div>
+                            <div class="col-75">
+                                <input placeholder="Chi tiết" type="text" name="details" [(ngModel)]="course.details">
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <!-- row -->
+                        <div class="row">
+                                <div class="col-25">
+                                  <label for="subject">Ngày Bắt Đầu</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Ngày Bắt Đầu" type="date" name="date_start" [(ngModel)]="course.date_start" >
+                                </div>
+                        </div>
+                        <!-- row -->
+                        <!-- row -->
+                        <div class="row">
+                                <div class="col-25">
+                                  <label for="subject">Ngày Kết Thúc</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Ngày Kết Thúc" type="date" name="date_end" [(ngModel)]="course.date_end">
+                                </div>
+                        </div>
+                        <!-- row -->
+                        <!-- row -->
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="subject">Ngày Tạo Lớp</label>
+                          </div>
+                          <div class="col-75">
+                              <input placeholder="Ngày Tạo Lớp" type="date" name="create_at" [(ngModel)]="course.create_at" >
+                          </div>
+                  </div>
+                  <!-- row -->
+                        <!-- row -->
+                          <div class="row">
+                            <input type="submit" value="Lưu">
+                          </div>
+                        <!-- row -->
+                        </form>
+                    </div>
+                    <!-- card-header -->
+                
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+</div>
+</div>
+
+<!-- footer -->
+<app-footer></app-footer>
+       <!-- footer -->
+</div>
+</div>    

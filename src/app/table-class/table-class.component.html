@@ -20,7 +20,7 @@
                         <div class="input-field col s10" >
                              
                         <div class="form-group form-black is-empty" style="text-align: center;">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" class="form-control" placeholder="Search" name="name" [(ngModel)]="filter.name">
                             <span class="material-input"></span>
                         </div>
                      
@@ -29,34 +29,42 @@
             <div class="content-card">
                    
                  <!-- panel -->
-              <div class="panel">
+              <div class="panel" *ngFor="let tr of course | student:filter | slice:(page-1)*limit:page*limit">
                   <div class="panel-heading"> 
-                      <i class="fa fa-wrench" style=" position: absolute;right: 10px;"></i>
-                      <i class="fa fa-remove" style=" position: absolute;right: 30px;"></i>
-                      <span class="panel-title">Class Name A</span>
+                       <!-- edit -->
+                       <button  (click)="updateUser(tr)" type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs" style=" position: absolute;right: -10px;top: 0px;">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <!-- edit -->
+                      <!-- remove -->
+                      <button (click)="deleteTrainer(tr)" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" style=" position: absolute;right: 20px;top: 0px;">
+                            <i class="material-icons">close</i>
+                        </button>
+                       <!-- remove -->
+                      <span class="panel-title">{{tr.name}}</span>
                   </div>
                   <div class="panel-body" >
-                      <h2>Classic</h2>
-                      <p>Code: 524521,52422,4</p>
+                      <h2>{{tr.status}}</h2>
+                      <p>{{tr.description}}</p>
                   </div>
                   <div class="panel-body-right">
-                   <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" >
+                   <img src="{{tr.image}}" >
                  </div>
               </div>  
               <!-- panel -->
               
           </div>
           <!-- paging -->
-                    <div class="btn-group pull-right" style="align-items: 0 auto">
-                        <ul class="pagination" >
-                           <li [ngClass]="{'disabled': (page == 1)}" ><a  (click)="prevPage()" href="javascript:void(0)">Prev</a></li>
-                              <li *ngFor="let page of pagesIndex"  [ngClass]="{'active': (currentIndex == page)}">
-                                 <a (click)="setPage()" href="javascript:void(0)" >{{page}}</a>
-                              </li>
-                           <li  ><a   (click)="nextPage()" href="javascript:void(0)" >Next</a></li>
-                        </ul>
-                     </div>
-          <!-- paging -->
+          <div class="btn-group pull-right" style="align-items: 0 auto">
+            <ul class="pagination" >
+              <li [ngClass]="{'disabled': (page == 1)}" (click)="(page == 1) || prevPage()"><a   href="javascript:void(0)">Prev</a></li>
+                <li *ngFor="let page1 of  (pagesIndex | slice:pagesIndex.length - 4);"  [ngClass]="{'active': (currentIndex == page)}">
+                    <a (click)="setPage(page1)" href="javascript:void(0)" >{{page1}}</a>
+                </li>
+              <li  [ngClass]="{'disabled': (page == max)}"><a   (click)="(page == max) || nextPage()" href="javascript:void(0)" >Next</a></li>
+            </ul>
+         </div>
+        <!-- paging -->
             </div>
         </div>
     </div>

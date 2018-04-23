@@ -23,14 +23,14 @@
                   </div>
                   <!-- card-header -->
                   <div class="container-content">
-                          <form>
+                          <form (ngSubmit)="processForm()">
                             <!-- row -->
                             <div class="row">
                               <div class="col-25">
                                 <label for="fname">Họ Lót</label>
                               </div>
                               <div class="col-75">
-                                <input type="text"   placeholder="Your name..">
+                                <input type="text"  name="lastname" [(ngModel)]="trainer.lastname"  placeholder="Your name..">
                               </div>
                             </div>
                             <!-- row -->
@@ -40,7 +40,7 @@
                                 <label for="lname">Tên</label>
                               </div>
                               <div class="col-75">
-                                  <input placeholder="Tên" type="text" >
+                                  <input placeholder="Tên" type="text" name="firstname" [(ngModel)]="trainer.firstname">
                               </div>
                             </div>
                             <!-- row -->
@@ -50,7 +50,7 @@
                                 <label for="country">Trạng Thái</label>
                               </div>
                               <div class="col-75">
-                                <select name="status" >
+                                <select name="status"  [(ngModel)]="trainer.status">
                                   <option >Đang Hoạt Động</option>
                                   <option >Hết Hoạt Động</option>
                                 </select>
@@ -63,9 +63,9 @@
                                     <label for="country">Thành Viên</label>
                                   </div>
                                   <div class="col-75">
-                                    <select name="description" >
-                                      <option >Giáo Viên</option>
-                                      <option >Sinh Viên</option>
+                                    <select name="description" [(ngModel)]="trainer.description" >
+                                      <option value="Giáo Viên">Giáo Viên</option>
+                                      <option value="Sinh Viên">Sinh Viên</option>
                                     </select>
                                   </div>
                               </div>
@@ -76,7 +76,7 @@
                                         <label for="subject">Số Điện Thoại</label>
                                       </div>
                                       <div class="col-75">
-                                          <input placeholder="Phone" type="text" >
+                                          <input placeholder="Phone" type="text" name="phone" [(ngModel)]="trainer.phone">
                                       </div>
                             </div>
                             <!-- row -->
@@ -86,7 +86,7 @@
                                 <label for="subject">Ngày Sinh</label>
                               </div>
                               <div class="col-75">
-                                  <input placeholder="Ngày Sinh" type="date" >
+                                  <input placeholder="Ngày Sinh" type="date" name="birthday" [(ngModel)]="trainer.birthday" >
                               </div>
                           </div>
                           <!-- row -->
@@ -96,7 +96,7 @@
                                     <label for="subject">Địa Chỉ</label>
                                   </div>
                                   <div class="col-75">
-                                      <input placeholder="Địa Chỉ" type="text" >
+                                      <input placeholder="Địa Chỉ" type="text"  name="address" [(ngModel)]="trainer.address">
                                   </div>
                           </div>
                           <!-- row -->
@@ -106,7 +106,7 @@
                                     <label for="subject">Hình Ảnh</label>
                                   </div>
                                   <div class="col-75">
-                                      <input placeholder="Hình Ảnh" type="text" >
+                                      <input placeholder="Hình Ảnh" type="text" name="image" [(ngModel)]="trainer.image">
                                   </div>
                           </div>
                           <!-- row -->

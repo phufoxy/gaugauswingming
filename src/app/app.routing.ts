@@ -8,10 +8,14 @@ import { TableTeacherComponent } from './table-teacher/table-teacher.component';
 import { TableClassComponent } from './table-class/table-class.component';
 import { TableStudentComponent } from './table-student/table-student.component';
 import { SettingComponent } from './setting/setting.component';
+import { EventComponent } from './event/event.component';
+import { ClassProfileComponent } from './class-profile/class-profile.component';
 
 
 const routes: Routes =[
     { path: 'dashboard',component: DashboardComponent },
+    { path: 'event',component: EventComponent },
+    { path: 'class-profile',component: ClassProfileComponent },
     { path: 'user-profile',component: UserProfileComponent },
     { path: 'table-teacher',component: TableTeacherComponent },
     { path: 'table-class',component: TableClassComponent },

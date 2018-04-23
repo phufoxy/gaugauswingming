@@ -6,15 +6,15 @@
       Swingming
   </a>
 </div>
-<div class="logo">
+<!-- <div class="logo">
     <a href="/dashboard" class="simple-text">  
-        <h2 style="font-size: 18px;text-align: center;
+        <h2 style="font-size: 15px;text-align: center;
         overflow: hidden;
         white-space: nowrap; 
         text-overflow: ellipsis; 
         width: 200px;">Hi! Trần Văn Phú</h2>
     </a>
-  </div>
+  </div> -->
 <div class="sidebar-wrapper">
     <form class="navbar-form navbar-right" role="search" *ngIf="isMobileMenu()">
         <div class="form-group form-black is-empty">
@@ -61,7 +61,7 @@
   </ul>
 
   <div class="nav-container">
-      <ul class="nav">
+      <ul class="nav"   >
           <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
               <!--  -->
               <a routerLink="/{{menuItem.path}}" >

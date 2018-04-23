@@ -19,6 +19,12 @@ import { TableStudentComponent } from './table-student/table-student.component';
 import { SettingComponent } from './setting/setting.component';
 
 
+import {TrainerService} from './share-service/trainer/trainer.service';
+import {CourseService} from './share-service/course/course.service';
+import { StudentPipe } from './filter/student.pipe';
+import { EventComponent } from './event/event.component';
+import { ClassProfileComponent } from './class-profile/class-profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,10 @@ import { SettingComponent } from './setting/setting.component';
     TableTeacherComponent,
     TableClassComponent,
     TableStudentComponent,
-    SettingComponent
+    SettingComponent,
+    StudentPipe,
+    EventComponent,
+    ClassProfileComponent
   ],
   imports: [
     HttpClientModule,
@@ -40,7 +49,7 @@ import { SettingComponent } from './setting/setting.component';
     RouterModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TrainerService,CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

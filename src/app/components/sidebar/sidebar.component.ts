@@ -8,10 +8,12 @@ declare const $: any;
     }
     export const ROUTES: RouteInfo[] = [
         { path: 'dashboard', title: 'Tổng Quan',  icon:'content_paste', class: '' },
-        { path: 'user-profile', title: 'Thông Tin',  icon:'person', class: '' },
+        { path: 'event', title: 'Sự Kiện',  icon:'event', class: '' },
+        { path: 'user-profile', title: 'Biểu Mẫu Thành Viên',  icon:'person', class: '' },
+        { path: 'class-profile', title: 'Biểu Mẫu Lớp',  icon:'assignment_ind', class: '' },
         { path: 'table-teacher', title: 'Danh Sách Giáo Viên',  icon:'class', class: '' },
-        { path: 'table-class', title: 'Danh Sách Lớp',  icon:'format_align_justify', class: '' },
         { path: 'table-student', title: 'Danh Sách Sinh Viên',  icon:'face', class: '' },
+        { path: 'table-class', title: 'Danh Sách Lớp',  icon:'format_align_justify', class: '' },
         { path: 'setting', title: 'Cài đặt',  icon:'perm_data_setting', class: '' },
     ];
 @Component({

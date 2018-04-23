@@ -21,7 +21,7 @@
                           <div class="input-field col s10" >
                               
                           <div class="form-group form-black is-empty" style="text-align: center;">
-                              <input type="text" class="form-control" placeholder="Search">
+                              <input type="text" class="form-control" placeholder="Search" name="firstname" [(ngModel)]="filter.firstname">
                               <span class="material-input"></span>
                           </div>
                       
@@ -30,27 +30,38 @@
                     
                     <div class="content-card">
                       <!-- panel -->   
-                      <div class="panel">
-                        <div class="panel-body">
-                          <p class="title-name">Trần Văn Nam</p>
-                          <p class="decriptions-name">Giáo Viên</p> 
-                        </div>
-                        <div class="panel-body-right">
-                          <img src="http://media.beam.usnews.com/e7/39/200d98cf4e538f62a25682c75b07/171219-teacher-stock.jpg" >
-                        </div>
-                      </div>  
-                      <!-- panel -->          
+                      <div class="panel" *ngFor="let tr of trainer | student:filter | slice:(page-1)*limit:page*limit">
+                            <!-- edit -->
+                            <button  (click)="updateUser(tr)" type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs" style=" position: absolute;right: -10px;top: -10px;">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <!-- edit -->
+                            <!-- remove -->
+                            <button (click)="deleteTrainer(tr)" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" style=" position: absolute;right: -10px;top: 10px;">
+                                <i class="material-icons">close</i>
+                            </button>
+                           <!-- remove -->
+                            <div class="panel-body">
+                              
+                              <p class="title-name">{{tr.lastname || "Not specified"}}  {{tr.firstname || "Not specified"}}</p>
+                              <p class="decriptions-name">{{tr.description || "Not specified"}} </p>                
+                            </div>
+                            <div class="panel-body-right">
+                              <img src="{{tr.image}}" >
+                            </div>
+                          </div>  
+                          <!-- panel -->          
                     </div>
                     <!-- paging -->
                     <div class="btn-group pull-right" style="align-items: 0 auto">
-                        <ul class="pagination" >
-                           <li [ngClass]="{'disabled': (page == 1)}" ><a  (click)="prevPage()" href="javascript:void(0)">Prev</a></li>
-                              <li *ngFor="let page of pagesIndex"  [ngClass]="{'active': (currentIndex == page)}">
-                                 <a (click)="setPage()" href="javascript:void(0)" >{{page}}</a>
-                              </li>
-                           <li  ><a   (click)="nextPage()" href="javascript:void(0)" >Next</a></li>
-                        </ul>
-                     </div>
+                            <ul class="pagination" >
+                              <li [ngClass]="{'disabled': (page == 1)}" (click)="(page == 1) || prevPage()"><a   href="javascript:void(0)">Prev</a></li>
+                                <li *ngFor="let page1 of  (pagesIndex | slice:pagesIndex.length - 4);"  [ngClass]="{'active': (currentIndex == page)}">
+                                    <a (click)="setPage(page1)" href="javascript:void(0)" >{{page1}}</a>
+                                </li>
+                              <li  [ngClass]="{'disabled': (page == max)}"><a   (click)="(page == max) || nextPage()" href="javascript:void(0)" >Next</a></li>
+                            </ul>
+                         </div>
                     <!-- paging -->
               </div>
           </div>
